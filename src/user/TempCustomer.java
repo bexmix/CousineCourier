@@ -26,7 +26,7 @@ public class TempCustomer extends User{
 	 * @param u is the user id
 	 */
 	public TempCustomer(String n, String u) {
-		super(n, u);
+		super(n, u);		//super. no, u.
 		super.setTag('c');
 	}
 	

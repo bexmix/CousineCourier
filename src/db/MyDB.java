@@ -13,7 +13,7 @@ public interface MyDB {
 	String PASS="CousineCourier";
 	String CONN_URL="jdbc:mysql://127.0.0.1:3306/coursedatabase";
 	
-	
+
 }
 /**
 CREATE TABLE `customer` (
