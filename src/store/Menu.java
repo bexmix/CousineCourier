@@ -27,7 +27,7 @@ public class Menu {
 	}
 	
 	/**
-	 * TODO finish this please me
+	 * TODO figure out the format
 	 */
 	public String toString() {
 		String str = "nothing for now";

@@ -73,7 +73,7 @@ public class Card {
 	
 	
 	/**
-	 * TODO finish me at some point plz	
+	 * TODO figure out the format
 	 */
 	public String toString() {
 		return "nothing for now";

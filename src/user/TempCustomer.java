@@ -42,7 +42,7 @@ public class TempCustomer extends User{
 	
 	public void removePayment(Card c) {
 		/**
-		 * TODO Actually finish me you idiot
+		 * TODO
 		 */
 	}
 	
@@ -72,7 +72,7 @@ public class TempCustomer extends User{
 	}
 	
 	/**
-	 * updates the balance when a puchase is made using the on site money account
+	 * updates the balance when a purchase is made using the on site money account
 	 * @param change
 	 */
 	public void subBalance(double change) {
@@ -87,7 +87,7 @@ public class TempCustomer extends User{
 	}
 	
 	/**
-	 * TODO come back and finish me!!
+	 * TODO 
 	 */
 	public String toString() {
 		return "nothing for now";

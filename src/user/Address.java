@@ -78,7 +78,7 @@ public class Address {
 	}
 
 	/**
-	 * TODO finish me at some point maybe??
+	 * TODO figure out the format
 	 */
 	public String toString() {
 		String str = "";
