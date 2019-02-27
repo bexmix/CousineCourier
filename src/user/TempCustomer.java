@@ -17,7 +17,6 @@ public class TempCustomer extends User{
 	 */
 	public TempCustomer() {
 		super();
-		super.setTag('c');
 	}
 	
 	/**
@@ -27,7 +26,6 @@ public class TempCustomer extends User{
 	 */
 	public TempCustomer(String n, String u) {
 		super(n, u);		//super. no, u.
-		super.setTag('c');
 	}
 	
 	public void addPayment(Card c) {

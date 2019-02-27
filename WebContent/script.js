@@ -3,6 +3,7 @@ function regValidate() {
 	var username = document.forms["regform"]["username"].value;
 	var password = document.forms["regform"]["password"].value;
 	var rpassword = document.forms["regform"]["retry-password"].value;
+	var tag = document.forms["regform"][""];
 	
 	if (username == "") {
         alert("username must be filled out");
@@ -20,7 +21,14 @@ function regValidate() {
     	alert("password doesnt match");
         document.forms["regform"]["password"].focus();
         return false;
-    }
+    } 
+	$('div .checkbox').click(function () { 
+        checkedState = $(this).attr('checked');
+         $(this).parent('div').children('.checkbox:checked').each(function () {
+             $(this).attr('checked', false);
+         });
+         $(this).attr('checked', checkedState);
+	});
 }
 function loginValidate(){
 	var username = document.forms["loginform"]["username"].value;

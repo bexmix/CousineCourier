@@ -12,13 +12,11 @@ public class Driver extends User{
 	public Driver()
 	{
 		super();
-		super.setTag('d');
 	}
 	
 	public Driver(String n, String u)
 	{
 		super(n,u);
-		super.setTag('d');
 	}
 	
 	public void updateStatus(Status stat) {

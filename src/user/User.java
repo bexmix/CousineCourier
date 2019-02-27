@@ -4,7 +4,6 @@ public abstract class User {
 	
 	private String name;
 	private String userId;
-	private char tag;
 	
 	public User(String n, String u)
 	{
@@ -44,22 +43,6 @@ public abstract class User {
 	 */
 	public void setUserId(String userId) {
 		this.userId = userId;
-	}
-	
-	/**
-	 * @param tag the tag to set
-	 */
-	public void setTag(char tag) {
-		this.tag = tag;
-	}
-	
-	/**
-	 * @return the tag
-	 */
-	public char getTag() {
-		return tag;
-	}
-	
-	
+	}	
 
 }

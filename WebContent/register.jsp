@@ -8,7 +8,8 @@
 <title>Register</title>
 
 </head>
-<body>
+<body>'
+
 <form name="regform" action="LoginController" method="post" onsubmit="return regValidate()">
 	<br>${message}<br>
 	
@@ -20,9 +21,20 @@
 	<br>
 	Re-Type Password: <input type="password" name="retry-password" id="retry-password"> 
 	<br>
+	<br>
+	
+	<h4>Select type of account</h4>
+	<div>    
+   		<input type="radio" name="chkUser" value="customer">Customer
+		<input type="radio" name="chkUser" value="driver">Driver
+		<input type="radio" name="chkUser" value="merchant">Merchant
+	</div>
+	
+	
 	<div id="password_error"></div><br>
 	<input type="submit" name="submit" value="register" >
 	<input type="reset" name="reset">
+
 	
 	</form>
 	
