@@ -3,8 +3,16 @@ function regValidate() {
 	var username = document.forms["regform"]["username"].value;
 	var password = document.forms["regform"]["password"].value;
 	var rpassword = document.forms["regform"]["retry-password"].value;
-	var tag = document.forms["regform"][""];
+	var radios = document.getElementsByName('chkUser');
+	var type;
 	
+	for (var i = 0, length = radios.length; i < length; i++){
+		if (radios[i].checked){
+			alert(radios[i].value);
+			break;
+		}
+	}	
+
 	if (username == "") {
         alert("username must be filled out");
         document.forms["regform"]["username"].focus();
@@ -22,13 +30,11 @@ function regValidate() {
         document.forms["regform"]["password"].focus();
         return false;
     } 
-	$('div .checkbox').click(function () { 
-        checkedState = $(this).attr('checked');
-         $(this).parent('div').children('.checkbox:checked').each(function () {
-             $(this).attr('checked', false);
-         });
-         $(this).attr('checked', checkedState);
-	});
+    else if(!radios[0].checked && !radios[1].checked && !radios[2].checked){
+    	alert("Please select an account type");
+    	document.forms["regform"]["chkUser"].focus();
+    	return false;
+    }
 }
 function loginValidate(){
 	var username = document.forms["loginform"]["username"].value;

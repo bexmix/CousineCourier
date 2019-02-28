@@ -36,7 +36,23 @@
 	Username: <input type="text" name="username" id="username"><br>
 	Password: <input type="password" name="password" id="password"><br>
 	<input type="submit" name="submit" value="login"><br>
-	<a href="register.jsp">registration</a>
+	<!--<a href="register.jsp">registration</a> -->
+	
+	<input type="submit" name="submit" value="login"><br>
+	<!-- New code added lines 40-42 this should make the buttons work --->
+	<a href="registerCustomer.jsp">Customer Registration</a>
+	<br>
+	<br>
+	<a href="registerDriver.jsp">Driver Registration</a>
+	<br>
+	<br>
+	<a href="registerMerchant.jsp">Merchant Registration</a>
+	<br>
+	<br>
+
+
+	
+	
 	
 	</form>
 </body>

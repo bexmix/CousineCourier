@@ -9,32 +9,42 @@
 
 </head>
 <body>
-
 <form name="regform" action="LoginController" method="post" onsubmit="return regValidate()">
 	<br>${message}<br>
 	
 	Username: <input type="text" name="username"> <br>
 	<div id="username_error"></div><br>
-	Customer name: <input type="text" name="name"><br>
+	Customer name: <input type="text" name="name"><br><br>
 	
 	Password: <input type="password" name="password" id="password"> 
+	<br><br>
+	Re-Type Password (Required): <input type="password" name="retry-password" id="retry-password"> 
 	<br>
-	Re-Type Password: <input type="password" name="retry-password" id="retry-password"> 
+	<br>
+	First Name (Required): <input type="text" name="first-name" id="first-name"> 
 	<br>
 	<br>
-	
-	<h4>Select type of account</h4>
-	<div id="checkUser">    
-   		<input type="radio" name="chkUser" value="customer">Customer
-		<input type="radio" name="chkUser" value="driver">Driver
-		<input type="radio" name="chkUser" value="merchant">Merchant
-	</div>
-
-	
+	Last Name (Required): <input type="text" name="last-name" id="last-name"> 
+	<br>
+	<br>
+	Street (Required): <input type="text" name="street" id="street"> 
+	<br>
+	<br>
+	Zip Code (Required): <input type="text" name="zip-code" id="zip-code"> 
+	<br>
+	<br>
+	State (Required): <input type="text" name="state" id="state"> 
+	<br>
+	<br>
+	Phone Number (Required): <input type="text" name="phone" id="phone"> 
+	<br>
+	<br>
+	email (Required): <input type="text" name="email" id="email"> 
+	<br>
+	<br>
 	<div id="password_error"></div><br>
 	<input type="submit" name="submit" value="register" >
 	<input type="reset" name="reset">
-
 	
 	</form>
 	
