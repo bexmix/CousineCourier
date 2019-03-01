@@ -37,6 +37,7 @@ public class LoginController extends HttpServlet {
 			c.setName(request.getParameter("name"));
 			c.setUsername(request.getParameter("username"));
 			c.setPassword(request.getParameter("password"));
+			c.setTag(request.getParameter("chkUser"));
 			customerDao.register(c);
 			request.setAttribute("successMessage", "Registration done, please login!");
 			request.getRequestDispatcher("login.jsp").forward(request, response);

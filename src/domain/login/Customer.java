@@ -9,7 +9,7 @@ public class Customer {
 	private String username;
 	private String password;
 	private String name;
-	private char tag;
+	private String tag;
 	public String getUsername() {
 		return username;
 	}
@@ -33,10 +33,10 @@ public class Customer {
 	 * Moved from the user class
 	 */
 	
-	public char getTag() {
+	public String getTag() {
 		return tag;
 	}
-	public void setTag(char tag) {
+	public void setTag(String tag) {
 		this.tag = tag;
 	}
 

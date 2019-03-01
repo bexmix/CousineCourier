@@ -14,7 +14,6 @@
 	
 	Username: <input type="text" name="username"> <br>
 	<div id="username_error"></div><br>
-	Customer name: <input type="text" name="name"><br><br>
 	
 	Password: <input type="password" name="password" id="password"> 
 	<br><br>

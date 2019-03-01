@@ -25,9 +25,9 @@
 	
 	<h4>Select type of account</h4>
 	<div id="checkUser">    
-   		<input type="radio" name="chkUser" value="customer">Customer
-		<input type="radio" name="chkUser" value="driver">Driver
-		<input type="radio" name="chkUser" value="merchant">Merchant
+   		<input type="radio" name="chkUser" value="c">Customer
+		<input type="radio" name="chkUser" value="d">Driver
+		<input type="radio" name="chkUser" value="m">Merchant
 	</div>
 
 	

@@ -8,7 +8,7 @@ function regValidate() {
 	
 	for (var i = 0, length = radios.length; i < length; i++){
 		if (radios[i].checked){
-			alert(radios[i].value);
+			type = radios[i].value;
 			break;
 		}
 	}	
@@ -35,6 +35,8 @@ function regValidate() {
     	document.forms["regform"]["chkUser"].focus();
     	return false;
     }
+	
+	
 }
 function loginValidate(){
 	var username = document.forms["loginform"]["username"].value;
@@ -57,4 +59,8 @@ function loginValidate(){
         document.forms["loginform"]["password"].focus();
         return false;
     }
+}
+
+function portalRedirect(){
+	
 }
