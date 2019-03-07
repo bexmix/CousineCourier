@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<form name="regform" action="LoginController" method="post" onsubmit="return regValidate()">
+<form name="regform" action="CustomerLoginController" method="post" onsubmit="return regValidate()">
 	<br>${message}<br>
 	
 	Username: <input type="text" name="username"> <br>
@@ -28,6 +28,9 @@
 	<br>
 	<br>
 	Street (Required): <input type="text" name="street" id="street"> 
+	<br>
+	<br>
+	City (Required): <input type="text" name="city" id="city">
 	<br>
 	<br>
 	Zip Code (Required): <input type="text" name="zip-code" id="zip-code"> 

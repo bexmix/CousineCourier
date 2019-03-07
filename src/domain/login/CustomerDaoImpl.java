@@ -19,11 +19,12 @@ public class CustomerDaoImpl implements CustomerDao {
 		int status = 0;
 		try{
 			conn = db.getConnection();
-			ps =conn.prepareStatement("insert into customer values(?,?,?,?)");
-			ps.setString(1, c.getUsername());
-			ps.setString(2, c.getPassword());
-			ps.setString(3, c.getName());
-			ps.setString(4, c.getTag());
+			ps =conn.prepareStatement("insert into customer values(?,?,?,?,?)");
+			ps.setNull(1, java.sql.Types.INTEGER);
+			ps.setString(2, c.getUsername());
+			ps.setString(3, c.getPassword());
+			ps.setString(4, c.getName());
+			ps.setString(5, c.getTag());
 			status = ps.executeUpdate();
 			conn.close();
 		}catch(Exception e){

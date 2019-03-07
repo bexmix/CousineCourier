@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class TempCustomer extends User{
 	
 	private double balance = 0;
-	private Address address;
+	public Address address;
 	private ArrayList<Card> payment = new ArrayList<Card>();
 
 	/**
@@ -17,6 +17,7 @@ public class TempCustomer extends User{
 	 */
 	public TempCustomer() {
 		super();
+		address = new Address();
 	}
 	
 	/**
@@ -56,10 +57,6 @@ public class TempCustomer extends User{
 	/**
 	 * prints the address in a proper format
 	 */
-	public void getAddress() {
-		address.toString();			//Super lazy i know, hopefully I'll come back and TODO it
-	}
-	
 	
 	/**
 	 * updates the balance when a card is recharged
@@ -89,6 +86,10 @@ public class TempCustomer extends User{
 	 */
 	public String toString() {
 		return "nothing for now";
+	}
+	
+	public Address getAddress() {
+		return address;
 	}
 	
 }
