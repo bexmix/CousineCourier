@@ -56,7 +56,7 @@ public class CustomerLoginController extends HttpServlet{
 			c.setTag("c");
 			cProfileDao.register(c);
 			request.setAttribute("successMessage", "Registration done, please login!");
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.getRequestDispatcher("customerLogin.jsp").forward(request, response);
 		}else{
 			request.setAttribute("message", "Data Not Found! Please register!");
 			request.getRequestDispatcher("register.jsp").forward(request, response);

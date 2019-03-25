@@ -4,11 +4,12 @@ public abstract class User {
 	
 	private String firstName;
 	private String lastName;
-	private String userId;
+	private String username;
 	private String email;
 	private String password;
 	private String tag;
 	private String phone;
+	private int userId;
 	
 	/**
 	 * @return the phone
@@ -38,16 +39,16 @@ public abstract class User {
 		this.tag = tag;
 	}
 
-	public User(String n, String u)
+	public User(String f, String u)
 	{
-		firstName = n;
-		userId = u;
+		firstName = f;
+		username = u;
 	}
 	
 	public User()
 	{
 		firstName = "";
-		userId = "";
+		username = "";
 	}
 
 	/**
@@ -76,14 +77,14 @@ public abstract class User {
 	 * @return the userId
 	 */
 	public String getUsername() {
-		return userId;
+		return username;
 	}
 
 	/**
 	 * @param userId the userId to set
 	 */
 	public void setUsername(String userId) {
-		this.userId = userId;
+		this.username = userId;
 	}
 	
 	public String getPassword() {
@@ -107,6 +108,22 @@ public abstract class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	/**
+	 * @return the userId
+	 */
+	public int getUserId() {
+		return userId;
+	}
+
+	/**
+	 * @param userId the userId to set
+	 */
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	
+	
 	
 	
 

@@ -4,22 +4,26 @@ import user.Address;
 
 public class Store {
 	private String name;
-	private Address location;
+	private Address address;
 	private String ownerId;
 	private Menu menu;
+	private String email;
+	private String phone;
+	private String type;
+	private int storeId;
 	
 	/**
 	 * empty constructor
 	 */
 	public Store() {
 		name = "";
-		location = null;
+		address = null;
 		ownerId = "";
 	}
 	
 	public Store(String name, Address location, String ownerId, Menu menu) {
 		this.name = name;
-		this.location = location;
+		this.address = location;
 		this.ownerId = ownerId;
 		this.menu = menu;
 	}
@@ -59,25 +63,86 @@ public class Store {
 	/**
 	 * prints the locations address in a formatted manner
 	 */
-	public void getLocation() {
-		location.toString();
+	public Address getAddress() {
+		return address;
 	}
 
 	/**
-	 * @param location the location to set
+	 * @param address the location to set
 	 */
-	public void setLocation(Address location) {
-		this.location = location;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 	
-	public void getMenu() {
-		menu.toString();
+	public Menu getMenu() {
+		return menu;
 	}
 	
 	public void setMenu(Menu menu) {
 		this.menu = menu;
 	}
 	
+	
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	/**
+	 * @return the phone
+	 */
+	public String getPhone() {
+		return phone;
+	}
+
+	/**
+	 * @param phone the phone to set
+	 */
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	
+	
+
+	/**
+	 * @return the type
+	 */
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	
+
+	/**
+	 * @return the storeId
+	 */
+	public int getStoreId() {
+		return storeId;
+	}
+
+	/**
+	 * @param storeId the storeId to set
+	 */
+	public void setStoreId(int storeId) {
+		this.storeId = storeId;
+	}
+
 	public String toString() {
 		String str = "";
 		return str;

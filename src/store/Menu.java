@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Menu {
 	private ArrayList<Item> menuList = new ArrayList<Item>();
+	private int quant;
 	
 	public Menu() {
 		
@@ -11,6 +12,7 @@ public class Menu {
 	
 	public void addItem(Item a) {
 		menuList.add(a);
+		quant++;
 	}
 	
 	public void removeItem(Item a) {
@@ -24,6 +26,14 @@ public class Menu {
 			System.out.println(a.getName() + " Is not present on the menu");
 		
 		//I'd like this to print some kind of notification on whether this was successful or not;
+	}
+	
+	public ArrayList<Item> getMenu() {
+		return menuList;
+	}
+	
+	public void setMenu(ArrayList<Item> menuList) {
+		this.menuList = menuList;
 	}
 	
 	/**

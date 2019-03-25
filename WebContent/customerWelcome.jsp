@@ -10,6 +10,10 @@
 <h1> ${message} !!! you are a customer</h1>
 
 	<a href="logout.jsp">logout</a>
+	<br><br>
+	<a href="">Previous orders (WIP)</a>
+	<br><br>	
+	<a href="">New order (WIP)</a>
 
 </body>
 </html>
