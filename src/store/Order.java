@@ -8,16 +8,16 @@ import java.util.ArrayList;
 
 public class Order {
 
-	private ArrayList<Item> food;
+	private ArrayList<Item> itemsTotal;
 	private double total;
 	
 	public Order() {
-		food = new ArrayList<Item>();
+		itemsTotal = new ArrayList<Item>();
 		total = 0.0;
 	}
 	
 	public Order(ArrayList<Item> food, double total) {
-		this.food = food;
+		this.itemsTotal = food;
 		this.total = total;
 	}
 
@@ -25,14 +25,14 @@ public class Order {
 	 * @return the food
 	 */
 	public ArrayList<Item> getFood() {
-		return food;
+		return itemsTotal;
 	}
 
 	/**
 	 * @param food the food to set
 	 */
 	public void setFood(ArrayList<Item> food) {
-		this.food = food;
+		this.itemsTotal = food;
 	}
 
 	/**
@@ -47,7 +47,7 @@ public class Order {
 	 */
 	public void calcTotal() {
 		total = 0;
-		for(Item i : food)
+		for(Item i : itemsTotal)
 		{
 			total += i.getPrice();
 		}
@@ -57,14 +57,14 @@ public class Order {
 	 * @param item
 	 */
 	public void addItem(Item item) {
-		food.add(item);
+		itemsTotal.add(item);
 		this.calcTotal();
 	}
 	
 	public void removeItem(Item item) {
-		int i = food.indexOf(item);
+		int i = itemsTotal.indexOf(item);
 		if(i > 0)
-			food.remove(i);
+			itemsTotal.remove(i);
 	}
 	
 	

@@ -10,6 +10,7 @@
 <h1> ${message} !!! </h1>
 
 	<a href="logout.jsp">logout</a>
+	<a href="restaurant.jsp">restaurants</a>"
 
 </body>
 </html>

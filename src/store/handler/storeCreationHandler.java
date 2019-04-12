@@ -28,7 +28,7 @@ public class storeCreationHandler {
 			ps.setString(7, s.getAddress().getZip());
 			ps.setString(8, s.getEmail());
 			ps.setString(9, s.getPhone());
-			ps.setString(10, s.getOwnerId());
+			ps.setInt(10, s.getOwnerId());
 		}catch(Exception e){
 			System.out.println(e);
 		}

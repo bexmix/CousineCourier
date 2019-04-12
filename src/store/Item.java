@@ -8,8 +8,8 @@ public class Item {
 	private String desc;
 	private double price;
 	private String[] extras;
-	private int item_id;
-	private int store_id;
+	private int itemId;
+	private int storeid;
 	private int quantity;
 	
 	
@@ -106,29 +106,29 @@ public class Item {
 	/**
 	 * @return the item_id
 	 */
-	public int getItem_id() {
-		return item_id;
+	public int getItemId() {
+		return itemId;
 	}
 
 	/**
 	 * @param item_id the item_id to set
 	 */
-	public void setItem_id(int item_id) {
-		this.item_id = item_id;
+	public void setItemId(int item_id) {
+		this.itemId = item_id;
 	}
 
 	/**
 	 * @return the store_id
 	 */
-	public int getStore_id() {
-		return store_id;
+	public int getStoreId() {
+		return storeid;
 	}
 
 	/**
 	 * @param store_id the store_id to set
 	 */
-	public void setStore_id(int store_id) {
-		this.store_id = store_id;
+	public void setStoreId(int store_id) {
+		this.storeid = store_id;
 	}
 	
 	/**

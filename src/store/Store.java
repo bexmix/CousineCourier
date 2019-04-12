@@ -5,7 +5,7 @@ import user.Address;
 public class Store {
 	private String name;
 	private Address address;
-	private String ownerId;
+	private int ownerId;
 	private Menu menu;
 	private String email;
 	private String phone;
@@ -18,14 +18,12 @@ public class Store {
 	public Store() {
 		name = "";
 		address = null;
-		ownerId = "";
+		ownerId = 0;
 	}
 	
-	public Store(String name, Address location, String ownerId, Menu menu) {
+	public Store(String name, Address location) {
 		this.name = name;
 		this.address = location;
-		this.ownerId = ownerId;
-		this.menu = menu;
 	}
 	
 	/**
@@ -49,14 +47,14 @@ public class Store {
 	/**
 	 * @return the ownerId
 	 */
-	public String getOwnerId() {
+	public int getOwnerId() {
 		return ownerId;
 	}
 
 	/**
 	 * @param ownerId the ownerId to set
 	 */
-	public void setOwnerId(String ownerId) {
+	public void setOwnerId(int ownerId) {
 		this.ownerId = ownerId;
 	}
 	
