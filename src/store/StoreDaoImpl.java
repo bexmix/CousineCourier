@@ -46,7 +46,6 @@ public class StoreDaoImpl {
 			
 			while(rs.next()) {
 				Address a = new Address();
-				//s.setItemId(rs.getInt(1));
 				s.setStoreId(rs.getInt(1));
 				s.setName(rs.getString(2));
 				a.setStreet(rs.getString(3));
@@ -57,6 +56,7 @@ public class StoreDaoImpl {
 				s.setPhone(rs.getString(7));
 				s.setEmail(rs.getString(8));
 				s.setOwnerId(rs.getInt(9));
+				s.setType(rs.getString(10));
 			}
 			
 			conn.close();
@@ -87,9 +87,7 @@ public class StoreDaoImpl {
 		}catch(Exception e) {
 			System.out.println(e);
 		}
-		
-		//Store[] list = (Store[]) storeList.toArray();
-		
+				
 		Store[] list = new Store[storeList.size()];
 		
 		for(int i = 0; i < storeList.size(); i++) {

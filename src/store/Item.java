@@ -103,6 +103,21 @@ public class Item {
 		this.extras = (String[]) extrasHolder.toArray();
 	}
 	
+	
+	public String getExtrasInString() {
+		
+		String str = "";
+		for(int i = 0; i < extras.length; i++) {
+			if(i != extras.length - 1)
+				str = str + extras[i] + "|";
+			else
+				str = str + extras[i];
+		}
+		
+		return str;
+	}
+	
+	
 	/**
 	 * @return the item_id
 	 */

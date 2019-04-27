@@ -6,10 +6,6 @@ public class Menu {
 	private ArrayList<Item> menuList = new ArrayList<Item>();
 	private int quant;
 	
-	public Menu() {
-		
-	}
-	
 	public void addItem(Item a) {
 		menuList.add(a);
 		quant++;

@@ -17,6 +17,7 @@ public class Delivery {
 	Address storeAddress;
 	Address destination;
 	Status status;
+	int deliveryId;
 	
 	public Delivery() {
 		order = new Order();
@@ -86,6 +87,14 @@ public class Delivery {
 	 */
 	public void setStatus(Status status) {
 		this.status = status;
+	}
+	
+	public void setDeliveryId(int id) {
+		deliveryId = id;
+	}
+	
+	public int getDeliveryId() {
+		return deliveryId;
 	}
 	
 	

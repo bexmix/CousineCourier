@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class CCServlet
  */
-@WebServlet("/CCServlet")
+@WebServlet("CCServlet")
 public class CCServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

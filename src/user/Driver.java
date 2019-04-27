@@ -4,7 +4,7 @@ public class Driver extends User{
 	
 	private enum Status
 	{
-		TO_STORE, ORDERING, TO_CUSTOMER, INACTIVE;
+		READY, TO_STORE, ORDERING, TO_CUSTOMER, INACTIVE;
 	}
 	
 	private Status stat;

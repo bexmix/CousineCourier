@@ -14,39 +14,14 @@ public class OrderDaoImpl {
 	DbManager db = new DbManager();
 	
 	
-	public Menu menuBuilder(int storeId) {
-
-		Menu menu = new Menu();
-			try{
-				conn = db.getConnection();
-				ps =conn.prepareStatement("select * from item where store_id=?");
-				ps.setInt(1, storeId);
-
-				ResultSet rs = ps.executeQuery();
-				
-				while(rs.next()) {
-					Item i = new Item();
-					i.setItemId(rs.getInt(1));
-					i.setStoreId(rs.getInt(2));
-					i.setName(rs.getString(3));
-					i.setDesc(rs.getString(4));
-					i.setPrice(rs.getDouble(5));
-					i.setExtrasFromString(rs.getString(6));
-					menu.addItem(i);
-				}
-				conn.close();
-			}catch(Exception e){
-				System.out.println(e);
-			}
-
-		return menu;
-	}
 	
 	public void storeOrder(Order order, Store s, TempCustomer c) {
 		try {
 			conn = db.getConnection();			
-			ArrayList<Item> food = new ArrayList<Item>();
+			ArrayList<Item> food = order.getFood();
 			int status = 0;
+			
+			
 			
 			for(Item i : food)
 			{
@@ -62,17 +37,18 @@ public class OrderDaoImpl {
 		}
 	}
 	
-	public Order retrieveSpecificOrder(int id)
+	public Order getOrder(int id)
 	{
 		Order o = new Order();
 		try {
 			Item i = new Item();
 			
-			ResultSet rs = ps.executeQuery();
+
 			
 			
 			conn = db.getConnection();
-			ps = conn.prepareStatement("select * from orders where orderId=" + id +")");
+			ps = conn.prepareStatement("select * from orders where orderId=" + id);
+			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				i = new Item();
 				i.setItemId(rs.getInt(1));

@@ -61,6 +61,3 @@ function loginValidate(){
     }
 }
 
-function portalRedirect(){
-	
-}
