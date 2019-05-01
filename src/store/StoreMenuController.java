@@ -27,14 +27,14 @@ public class StoreMenuController extends HttpServlet{
 		StoreDaoImpl storeDao = new StoreDaoImpl();		
 		MenuDaoImpl menuDao = new MenuDaoImpl();
 		PrintWriter out = response.getWriter();
-		//Store store = storeDao.retrieveStore((int) request.getAttribute("storeId.value"));
 		int id = 1;
-		Store store = storeDao.retrieveStore(id);
-		Menu menu = menuDao.getMenu(id);
+		Store store = storeDao.retrieveStore(Integer.parseInt(request.getParameter("storeId")));
+		Menu menu = menuDao.getMenu(Integer.parseInt(request.getParameter("storeId")));
 		ArrayList<Item> list = menu.getMenu();
 		int width = 3;
 		int depth = (int) Math.ceil(menu.size()/3) + 1;
 		int count = 0;
+		
 		
 		
 		DbManager db = new DbManager();
@@ -97,7 +97,7 @@ public class StoreMenuController extends HttpServlet{
          for(int i = 0; i < depth; i++) {
         	 out.println("			<tr>\r\n");
         	 for(int j = 0; j < width; j++) {
-        		 if(count <= list.size()) {
+        		 if(count < list.size()) {
         			 out.println("<td>\r\n	<div>");
             		 out.println("<button type=button name=" + list.get(count).getItemId() + " value=\"" + list.get(count).getName() + "\">");
             		 out.println("<p>" + list.get(count).toString() + "</p>");

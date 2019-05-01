@@ -33,7 +33,7 @@ public class StoreListController extends HttpServlet{
 
 		int width = 3;
 		int depth = (list.length/width) + 1;
-		String prep = "<form action=\"Menu\" method=\"get\"><table>\r\n"; //+
+		String prep = "<form action=\"Menu\" name=\"storeId\" id=\"storeId\" method=\"get\"><table>\r\n"; //+
 		//"<form action=\"${pageContext.request.contextPath}/StoreMenuController\" method=\"post\">";
 		int count = 0;
 		
@@ -87,7 +87,7 @@ public class StoreListController extends HttpServlet{
 				for(int x = 0; x < width; x++){
 					if(count < list.length){
 					prep = prep + "<td>\r\n<div>\r\n";
-					prep = prep + "<button type=\"submit\" name=\"storeId\" value=\"" + list[count].getStoreId() +"\">\r\n";
+					prep = prep + "<button type=\"submit\" name=\"storeId\" id=\"storeId\" value=\"" + list[count].getStoreId() +"\">\r\n";
 					prep = prep + "<a href=\"\">" + list[count].getName() + "</a>" + "\r\n <br> \r\n" + list[count].getType();
 					prep = prep + "</button>\r\n";
 					prep = prep + "</div> \r\n </td>\r\n";
@@ -109,10 +109,5 @@ public class StoreListController extends HttpServlet{
 	         out.println("</html>\r\n");
 	         
 		}finally {out.close();}
-		
-		
-		
 	}
-		
-
 }

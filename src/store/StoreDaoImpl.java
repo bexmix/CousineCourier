@@ -102,4 +102,34 @@ public class StoreDaoImpl {
 		
 		return list;
 	}
+	
+	public Store[] search(String name) {
+		Store s = new Store();
+		Store[] list = new Store[0];
+
+		
+		try {
+			
+			conn = db.getConnection();
+			ps = conn.prepareStatement("select count(*) from store where name=?");
+			ps.setString(1, name);
+			ResultSet rs = ps.executeQuery();
+			rs.next();
+			list = new Store[rs.getInt(1)];
+			
+			ps = conn.prepareStatement("select * from store where name=?");
+			rs = ps.executeQuery();
+			
+			for(int i = 0; i < list.length; i++) {
+				list[i] = this.retrieveStore(rs.getInt(1));
+			}
+			
+			
+			
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		
+		return list;
+	}
 }
