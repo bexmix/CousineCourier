@@ -19,9 +19,7 @@ public class OrderDaoImpl {
 		try {
 			conn = db.getConnection();			
 			ArrayList<Item> food = order.getFood();
-			int status = 0;
-			
-			
+			int status = 0;	
 			
 			for(Item i : food)
 			{

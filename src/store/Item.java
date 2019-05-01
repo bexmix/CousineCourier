@@ -167,12 +167,7 @@ public class Item {
 	//TODO Come back and work on me please
 	public String toString() {
 		
-		String str = "";
-		
-		for(int i = 0; i <= extras.length; i++)
-			str = str + extras[i] + "	";
-		
-		str = name + "\n" + price + "\n" + desc + "\n" + str;
+		String str = name + "\r\n" + price + "\r\n" + desc + "\r\n";
 		
 		return str;
 	}

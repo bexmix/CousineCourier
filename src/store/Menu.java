@@ -32,6 +32,10 @@ public class Menu {
 		this.menuList = menuList;
 	}
 	
+	public int size() {
+		return quant;
+	}
+	
 	/**
 	 * TODO figure out the format
 	 */

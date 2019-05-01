@@ -37,6 +37,9 @@ public class StoreDaoImpl {
 	
 	public Store retrieveStore(int id) {
 		Store s = new Store();
+		Menu m = new Menu();
+		MenuDaoImpl menuDao = new MenuDaoImpl();
+		
 		try {
 			conn = db.getConnection();
 			ps = conn.prepareStatement("select * from store where store_id=?");
@@ -57,6 +60,9 @@ public class StoreDaoImpl {
 				s.setEmail(rs.getString(8));
 				s.setOwnerId(rs.getInt(9));
 				s.setType(rs.getString(10));
+				
+//				m = menuDao.getMenu(id);			
+//				s.setMenu(m);
 			}
 			
 			conn.close();

@@ -16,27 +16,27 @@ public class MenuDaoImpl {
 	DbManager db = new DbManager();
 	
 	public Menu getMenu(int storeId) {
-		try {
-			
+
 			conn = db.getConnection();
 			Menu m = new Menu();
 			Item i = new Item();
-			int status = 0;
 
+			try {
 			
-			ps=conn.prepareStatement("select * from item where store_id=" + storeId);
+			ps=conn.prepareStatement("select * from item where store_id=?;");
+			ps.setInt(1, storeId);
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
+				System.out.println(rs.getString(3));
 				i.setItemId(rs.getInt(1));
 				i.setStoreId(rs.getInt(2));
 				i.setName(rs.getString(3));
 				i.setDesc(rs.getString(4));
 				i.setPrice(rs.getDouble(5));
-				i.setExtrasFromString(rs.getString(6));
+//				i.setExtrasFromString(rs.getString(6));
 				m.addItem(i);
 			}
-			return m;
 			
 		}catch(Exception e) {
 			System.out.println(e);

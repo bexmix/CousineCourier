@@ -12,12 +12,12 @@ import java.sql.Connection;
 import db.DbManager;
 import store.Store;
 
-@WebServlet("StoreListController")
+@WebServlet("/StoreList")
 public class StoreListController extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
 		response.setContentType("text/html;charset=UTF-8");
 		
@@ -27,27 +27,17 @@ public class StoreListController extends HttpServlet{
 		
 		DbManager db = new DbManager();
 		Connection conn = (Connection) db.getConnection();
-		if(conn == null)
-			out.print("failed");
-		else
-			out.print("succeeded"); 
+
 		
 
 
 		int width = 3;
 		int depth = (list.length/width) + 1;
-		String prep = "<table>\r\n"; //+
+		String prep = "<form action=\"Menu\" method=\"get\"><table>\r\n"; //+
 		//"<form action=\"${pageContext.request.contextPath}/StoreMenuController\" method=\"post\">";
 		int count = 0;
 		
 		try {
-			 out.println("<%@page import=\"db.DbManager\"%>\r\n" + 
-			 		"<%@page import=\"java.sql.Connection\"%>\r\n" + 
-			 		"<%@page import=\"store.Store\" %>\r\n" + 
-			 		"<%@page import=\"store.StoreDaoImpl\" %>\r\n" + 
-			 		"<%@page import=\"java.io.PrintWriter\" %>");
-			 out.println("<%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\"\r\n" + 
-			 		"    pageEncoding=\"UTF-8\"%>");
 		
 			 out.println("<!DOCTYPE html>");
 	         out.println("<html><head>");
@@ -96,9 +86,10 @@ public class StoreListController extends HttpServlet{
 				prep = prep + "<tr>\r\n";
 				for(int x = 0; x < width; x++){
 					if(count < list.length){
-					prep = prep + "<td>\r\n";
-					//prep = prep + "<button type=\"submit\" name=\"button\" value=\"" + list[count].getStoreId() +"\">\r\n";
+					prep = prep + "<td>\r\n<div>\r\n";
+					prep = prep + "<button type=\"submit\" name=\"storeId\" value=\"" + list[count].getStoreId() +"\">\r\n";
 					prep = prep + "<a href=\"\">" + list[count].getName() + "</a>" + "\r\n <br> \r\n" + list[count].getType();
+					prep = prep + "</button>\r\n";
 					prep = prep + "</div> \r\n </td>\r\n";
 					}
 					else{
@@ -110,7 +101,7 @@ public class StoreListController extends HttpServlet{
 			}
 			
 			prep = prep + //"</form>\r\n"
-					"</table>\r\n";
+					"</table>\r\n" + "</form>\r\n";
 			
 			out.println(prep);
 	         	
