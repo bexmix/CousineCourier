@@ -33,7 +33,7 @@ public class StoreMenuController extends HttpServlet{
 		Menu menu = menuDao.getMenu(id);
 		ArrayList<Item> list = menu.getMenu();
 		int width = 3;
-		int depth = (int) Math.ceil(menu.size()/3);
+		int depth = (int) Math.ceil(menu.size()/3) + 1;
 		int count = 0;
 		
 		
@@ -96,7 +96,7 @@ public class StoreMenuController extends HttpServlet{
          
          for(int i = 0; i < depth; i++) {
         	 out.println("			<tr>\r\n");
-        	 for(int j = 0; j <= width; j++) {
+        	 for(int j = 0; j < width; j++) {
         		 if(count <= list.size()) {
         			 out.println("<td>\r\n	<div>");
             		 out.println("<button type=button name=" + list.get(count).getItemId() + " value=\"" + list.get(count).getName() + "\">");

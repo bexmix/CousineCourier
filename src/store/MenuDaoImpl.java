@@ -28,6 +28,7 @@ public class MenuDaoImpl {
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
+				i = new Item();
 				System.out.println(rs.getString(3));
 				i.setItemId(rs.getInt(1));
 				i.setStoreId(rs.getInt(2));
