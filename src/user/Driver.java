@@ -7,6 +7,7 @@ public class Driver extends User{
 		READY, TO_STORE, ORDERING, TO_CUSTOMER, INACTIVE;
 	}
 	
+	
 	private Status stat;
 	
 	public Driver()

@@ -32,6 +32,15 @@ public class Item {
 		this.extras = extras;
 	}
 	
+	public Item(String name, String desc, double price, String[] extras, int quantity) {
+		this.name = name;
+		this.desc = desc;
+		this.price = price;
+		this.extras = extras;
+		this.quantity = quantity;
+	}
+	
+	
 	
 	/**
 	 * Getters and setters
@@ -167,7 +176,7 @@ public class Item {
 	//TODO Come back and work on me please
 	public String toString() {
 		
-		String str = name + "\r\n" + price + "\r\n" + desc + "\r\n";
+		String str = name + "<br>\r\n $" + price + "<br>\r\n" + desc + "\r\n";
 		
 		return str;
 	}

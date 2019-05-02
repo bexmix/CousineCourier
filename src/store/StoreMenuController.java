@@ -2,6 +2,8 @@ package store;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,12 +29,13 @@ public class StoreMenuController extends HttpServlet{
 		StoreDaoImpl storeDao = new StoreDaoImpl();		
 		MenuDaoImpl menuDao = new MenuDaoImpl();
 		PrintWriter out = response.getWriter();
-		int id = 1;
 		Store store = storeDao.retrieveStore(Integer.parseInt(request.getParameter("storeId")));
 		Menu menu = menuDao.getMenu(Integer.parseInt(request.getParameter("storeId")));
 		ArrayList<Item> list = menu.getMenu();
+		Order o = new Order();
+		int size = menu.size();
 		int width = 3;
-		int depth = (int) Math.ceil(menu.size()/3) + 1;
+		int depth = (int) Math.ceil(size/3) + 1;
 		int count = 0;
 		
 		
@@ -45,6 +48,7 @@ public class StoreMenuController extends HttpServlet{
 		
 		 out.println("<!DOCTYPE html>");
          out.println("<html><head>");
+        // out.println("<script type=\"text/javascript\" src=\"/WebContent/orderScript.js\"></script>");
          out.println("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>");
          out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n" + 
          		"	<title>Store List</title>\r\n" + 
@@ -82,13 +86,26 @@ public class StoreMenuController extends HttpServlet{
          		"	</center>\r\n" + 
          		"\r\n");
          out.println("<body>\r\n");
+        
          
-         for(int i = 0; i < list.size(); i++) {
-        	 System.out.println(list.get(count).toString());
-         }
+        out.println("<script type=\"text/javascript\">");
+        out.println("function addItem(id) { \r\n" +
+        		 	 "	var quant = parseInt(document.getElementById(id).innerHTML);\r\n" + 
+        		 	 "	quant += 1;\r\n" + 
+        		 	 "	document.getElementById(id).innerHTML = quant;\r\n" + 
+        		 	 "}");
+         out.println("function subItem(id){\r\n" + 
+         		"	var quant = parseInt(document.getElementById(id).innerHTML);\r\n" + 
+         		"	if(quant > 0){\r\n" + 
+         		"		quant -= 1;\r\n" + 
+         		"		document.getElementById(id).innerHTML = quant;		\r\n" + 
+         		"	}\r\n" + 
+         		"\r\n" + 
+         		"}");
+         out.println("");
+         out.println("</script>");
          
          out.println("<section>\r\n");
-         out.println("	<form>\r\n");
          out.println("		<table>\r\n");
          
          
@@ -98,28 +115,38 @@ public class StoreMenuController extends HttpServlet{
         	 out.println("			<tr>\r\n");
         	 for(int j = 0; j < width; j++) {
         		 if(count < list.size()) {
+        			 
+        			 //the food button, will make into a regular description later
         			 out.println("<td>\r\n	<div>");
-            		 out.println("<button type=button name=" + list.get(count).getItemId() + " value=\"" + list.get(count).getName() + "\">");
+            		 out.println("<button type=button name=" + list.get(count).getItemId() + "id=\"" + i + "Id\" value=\"" + list.get(count).getName() + "\">");
             		 out.println("<p>" + list.get(count).toString() + "</p>");
-        //    		 System.out.println("item" + list.get(count).toString());
+//            		 System.out.println("item" + list.get(count).toString());
             		 out.println("</button>");
+            		 out.println("<br>");
+            		 
+//            		 the edit buttons (+ or - quantity)
+            		 
+            		 out.println("<form action=\"OrderController\">");
+            		 out.println("<button type=button name=add value=\"+\" onclick=\"addItem(" + i + ")\"></button>");
+            		 out.print("<a id=\"" + i + "\"count\" value=\"data-id=\"" + list.get(count).getItemId() + "\">0</a>");
+            		 out.print("<button type=button name=sub value=\"-\"onclick=\"subItem(" + i + ")\"></button>");
+            		 out.println("</form>");
+            		 
             		 out.println("</div>\r\n</td>");
             		 count++;
         		 }	
         		 else
         		 {
-        			 out.println("<td>else</td>");
+        			 out.println("<td></td>");
+//        			 out.println("<td>else</td>");
         		 }
         	 }
         	 out.println("</tr>\r\n");
          }
-         out.println("</table>\r\n</form>\r\n</section>");	
+         out.println("</table>\r\n</section>");	
          
-         
-         out.println("<aside>");
-         out.println("");
-         out.println("</aside>");
-         
+         out.println("<button type=submit name=\"submit\" value=\"submit\"");
+
          out.println("</body>");
          out.println("</html>");
          
@@ -128,7 +155,11 @@ public class StoreMenuController extends HttpServlet{
 			out.close();
 		}
 		
+		RequestDispatcher rd = request.getRequestDispatcher("OrderConfirmation");
 		
+		rd.forward(request, response);
+		request.setAttribute("menuSize", size);
+				
 	}
 	
 	

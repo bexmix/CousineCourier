@@ -31,8 +31,10 @@ public class StoreListController extends HttpServlet{
 		
 
 
-		int width = 3;
+		int width = 4;
 		int depth = (list.length/width) + 1;
+		
+		
 		String prep = "<form action=\"Menu\" name=\"storeId\" id=\"storeId\" method=\"get\"><table>\r\n"; //+
 		//"<form action=\"${pageContext.request.contextPath}/StoreMenuController\" method=\"post\">";
 		int count = 0;
@@ -64,19 +66,27 @@ public class StoreListController extends HttpServlet{
 	         		"		}\r\n" + 
 	         		"		\r\n" + 
 	         		"		topnav input[type=text] {\r\n" + 
-	         		"		float: right;\r\n" + 
-	         		"		padding: 6px;\r\n" + 
-	         		"		margin-right: 16px;\r\n" + 
-	         		"		border: none;\r\n" + 
-	         		"		font-size: 17px;\r\n" + 
+	         		"			float: right;\r\n" + 
+	         		"			padding:126px;\r\n" + 
+	         		"			margin-right: 200px;\r\n" + 
+	         		"			border: none;\r\n" + 
+	         		"			font-size: 24px;\r\n" + 
+	         		"			height: 30px" +
+	         		"			width: 50px" +
 	         		"		}\r\n" + 
+	         		"		.SearchBar {" +
+	         		"		position: absolute;" +
+	         		"		top: 100px;"+
+	         		"		left: 250px;" +
+	         		"		height: 80px;" +
+	         		"		width: 100px;" +
 	         		"		\r\n" + 
 	         		"		</style>\r\n" + 
 	         		"	</head>\r\n" + 
 	         		"	\r\n" + 
 	         		"	<center>\r\n" + 
-	         		"	<div class=\"topnav\">\r\n" + 
-	         		" 	 	<input type=\"text\" name=\"Search Restaurant\">\r\n" + 
+	         		"	<div class=\"SearchBar\">\r\n" + 
+	         		" 	 	Search Restaurant: <input type=\"text\" name=\"Search Restaurant\" placeholder=\"search...\">\r\n" + 
 	         		"	</div>\r\n" + 
 	         		"	</center>\r\n" + 
 	         		"\r\n");
